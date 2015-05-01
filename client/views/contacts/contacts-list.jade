@@ -1,0 +1,19 @@
+h3 CONTACTS LIST
+
+.row
+  .col-xs-6.col-md-4
+    table.table.table-striped
+      thead
+        tr
+          th Delete
+          th: i.fa.fa-camera
+          th Name
+          th Email
+          th Phone
+      tbody
+        tr(ng-repeat='contact in contacts')
+          td: i.fa.fa-trash-o
+          td: img(ng-src='')
+          td {{contact.name}}
+          td {{contact.email}}
+          td {{contact.phone}}

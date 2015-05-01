@@ -1,4 +1,4 @@
-nav.navbar.navbar-default(ng-controller='NavCtrl')
+nav.navbar.navbar-inverse(ng-controller='NavCtrl')
   .container-fluid
     .navbar-header
       button.navbar-toggle.collapsed(data-toggle="collapse", data-target="#navbar")
@@ -6,15 +6,15 @@ nav.navbar.navbar-default(ng-controller='NavCtrl')
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand(href='/') Photo Album
+      a.navbar-brand(href='/') Address Book
     #navbar.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right(ng-show='activeUser')
         li: a(ui-sref='home'): i.fa.fa-home &nbsp; Home
-        li: a(ui-sref='about'): i.fa.fa-info &nbsp; About
-        li: a(ui-sref='faq'): i.fa.fa-question &nbsp; FAQ
-        li: a(ui-sref='contact'): i.fa.fa-phone &nbsp; Contact
-        li: a(ui-sref='albums.list'): i.fa.fa-book &nbsp; Address Book
-        li: a(ui-sref='albums.new'): i.fa.fa-plus-circle &nbsp; Create New Contact
+        //- li: a(ui-sref='about'): i.fa.fa-info &nbsp; About
+        //- li: a(ui-sref='faq'): i.fa.fa-question &nbsp; FAQ
+        //- li: a(ui-sref='contact'): i.fa.fa-phone &nbsp; Contact
+        li: a(ui-sref='contacts.list'): i.fa.fa-book &nbsp; Address Book
+        li: a(ui-sref='contacts.new'): i.fa.fa-plus-circle &nbsp; Create New Contact
         li: button.btn.btn-danger(ng-click='logout()'): i.fa.fa-sign-out &nbsp; {{displayName}}
       ul.nav.navbar-nav.navbar-right(ng-hide='activeUser')
         li: a(ui-sref='home'): i.fa.fa-home &nbsp; Home

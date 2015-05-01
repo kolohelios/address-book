@@ -34,7 +34,7 @@ angular.module('addressbook')
       case 'facebook':
         return data.facebook.displayName;
       case 'google':
-        return data.google.username;
+        return data.google.displayName;
     }
   }
 });

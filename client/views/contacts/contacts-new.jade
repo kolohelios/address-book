@@ -1,0 +1,41 @@
+h3 NEW CONTACT
+
+form(name='newContactForm')
+.row
+  .col-xs-6.col-md-4
+    .form-group
+      label(for='name') Name
+      input.form-control(type='text' name='name' ng-model='contact.name')
+    .form-group
+      label(for='address') Address
+      textarea.form-control(name='address' ng-model='contact.address')
+    .form-group
+      label(for='bday') Birthday
+      input.form-control(type='date' name='bday' ng-model='contact.birthday')
+    .form-group
+      label(for='phonenum') Phone
+      input.form-control(type='tel' name='phonenum' ng-model='contact.phone')
+  .col-xs-6.col-md-4
+    .form-group
+      label(for='email') E-mail
+      input.form-control(type='email' name='email' ng-model='contact.email')
+    .form-group
+      label(for='homepage') Homepage
+      input.form-control(type='url' name='homepage' ng-model='contact.homepage')
+    .form-group
+      label(for='twitter') Twitter
+      input.form-control(type='text' name='twitter' ng-model='contact.twitter')
+    .form-group
+      label(for='twitter') Facebook
+      input.form-control(type='url' name='facebook' ng-model='contact.facebook')
+    .form-group
+.row
+  .col-xs-6.col-md-4
+    form(name='addPhotoForm')
+      label(for='uploadPhoto') Pick a pic
+      input(type='file' ng-model='imageFile')
+      button.btn.btn-success(ng-click='uploadImage(imageFile)') Upload Photo
+      
+.row
+  .col-xs-12
+  button.form-control.btn.btn-primary(ng-click=('saveContact(contact)')) Save Contact
