@@ -9,6 +9,10 @@ angular.module('addressbook')
     AddressBook.deleteContact(contact);
   };
 
+  $scope.editContact = function(contact){
+    $state.go('contacts.edit', {'contact': contact.$id});
+  };
+
   $scope.showContact = function(contact){
     $state.go('contacts.show', {'contact': contact.$id});
   };

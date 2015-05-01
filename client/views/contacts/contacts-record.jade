@@ -1,4 +1,4 @@
-h3 NEW CONTACT
+h3 {{formState | uppercase}} CONTACT
 
 form(name='newContactForm')
 .row
@@ -34,8 +34,8 @@ form(name='newContactForm')
     .col-xs-12
       form(name='addPhotoForm')
         label(for='uploadPhoto') Select a Photo
-        input(type='file' ng-model='imageFile')
-        button.btn.btn-success(ng-click='uploadImage(imageFile)') Save Image
+        input(type='file')
+        button(ng-click='uploadImage()') Upload Photo
 .row
   .col-xs-12
   button.form-control.btn.btn-primary(ng-click='saveContact(contact)') Save Contact

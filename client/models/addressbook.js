@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('addressbook')
-.factory('AddressBook', function($rootScope, $firebaseArray){
+.factory('AddressBook', function($rootScope, $firebaseArray, $state){
 
   var fbAddressBook;
   var afAddressBook;
@@ -15,7 +15,14 @@ angular.module('addressbook')
   };
 
   AddressBook.addContact = function(contact){
-    afAddressBook.$add(contact);
+    var o = angular.copy(contact);
+    o.birthday = o.birthday.getTime();
+    afAddressBook.$add(o);
+    $state.go('contacts.list');
+  };
+
+  AddressBook.editContact = function(contact){
+    $state.go('contacts.edit', {'contact': contact});
   };
 
   AddressBook.deleteContact = function(contact){

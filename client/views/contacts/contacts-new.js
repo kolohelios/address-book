@@ -4,26 +4,20 @@ angular.module('addressbook')
 .controller('ContactsNewCtrl', function(AddressBook, $scope, $state){
 
   AddressBook.init();
+  $scope.formState = 'new';
 
   $scope.saveContact = function(contact){
-    AddressBook.addContact(contact);
-    debugger;
-    convertImagesToString();
+    var o = angular.copy(contact);
+    o.photo = photoString;
+    AddressBook.addContact(o);
     $state.go('contacts.list');
   };
 
-  $scope.uploadImage = function(imageFile){
-    //console.log(convertImageToString(imageFile);
-    console.log(imageFile);
+  $scope.uploadImage = function(){
+    previewFile();
   };
 
-  function convertImagesToString(imageFile){
-    var image = new FileReader();
-    image.readAsDataURL(imageFile);
-    return image.result;
-  }
-
-  var tempString;
+  var photoString;
 
   function previewFile(){
     var preview = document.querySelector('img');
@@ -31,7 +25,7 @@ angular.module('addressbook')
     var reader  = new FileReader();
 
     reader.onloadend = function () {
-      tempString = reader.result;
+      photoString = reader.result;
     };
 
     if (file) {
@@ -40,6 +34,4 @@ angular.module('addressbook')
       preview.src = '';
     }
   }
-
-
 });
