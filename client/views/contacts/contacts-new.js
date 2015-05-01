@@ -9,7 +9,6 @@ angular.module('addressbook')
   $scope.contact.photo = '';
 
   $scope.saveContact = function(contact){
-    
     AddressBook.addContact(contact);
     $state.go('contacts.list');
   };
@@ -17,8 +16,6 @@ angular.module('addressbook')
   $scope.uploadImage = function(){
     previewFile();
   };
-
-  //var photoString;
 
   function previewFile(){
     var preview = document.querySelector('img');

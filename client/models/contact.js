@@ -18,6 +18,10 @@ angular.module('addressbook')
     afContact.$save();
   };
 
+  Contact.delete = function(){
+    afContact.$remove();
+  };
+
   return Contact;
 
 });

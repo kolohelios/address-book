@@ -1,20 +1,22 @@
-h3 CONTACTS LIST
+h3 ADDRESS BOOK
 
 .row
   .col-xs-12
     table.table.table-striped
       thead
         tr
+          th Details
           th Delete
           th Edit
-          th: i.fa.fa-camera
+          th: i.fa.fa-camera.fa-lg
           th Name
           th Email
           th Phone
       tbody
         tr(ng-repeat='contact in contacts')
-          td(ng-click='deleteContact(contact)'): i.fa.fa-trash-o
-          td(ng-click='editContact(contact)'): i.fa.fa-pencil
+          td(ng-click='showContact(contact)'): i.fa.fa-search.fa-3x
+          td(ng-click='deleteContact(contact)'): i.fa.fa-trash-o.fa-3x
+          td(ng-click='editContact(contact)'): i.fa.fa-pencil.fa-3x
           td: img.listphoto(ng-src='{{contact.photo}}')
           td(ng-click='showContact(contact)') {{contact.name}}
           td {{contact.email}}

@@ -6,4 +6,10 @@ h4 {{contact.name}}
     ul
       li: a(href='mailto:{{contact.email}}') {{contact.email}}
       li: a(href='tel:{{contact.phone}}') {{contact.phone}}
+      li: a(href='tel:{{contact.phone}}') {{contact.phone}}
+      li: a(href='tel:{{contact.phone}}') {{contact.phone}}
+      li: a(href='tel:{{contact.phone}}') {{contact.phone}}
+      li: a(href='tel:{{contact.phone}}') {{contact.phone}}
+    button.form-control.btn.btn-primary(ng-click='editContact(contact)') Edit
+    button.form-control.btn.btn-danger(ng-click='deleteContact(contact)') Delete
       

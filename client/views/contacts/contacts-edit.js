@@ -19,7 +19,6 @@ angular.module('addressbook')
   $scope.uploadImage = function(){
     previewFile();
   };
-  var photoString;
 
   function previewFile(){
     var preview = document.querySelector('img');
@@ -27,7 +26,7 @@ angular.module('addressbook')
     var reader  = new FileReader();
 
     reader.onloadend = function () {
-      photoString = reader.result;
+      $scope.contact.photo = reader.result;
     };
 
     if (file) {
