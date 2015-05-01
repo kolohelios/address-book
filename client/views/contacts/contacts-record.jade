@@ -30,16 +30,18 @@ form(name='newContactForm')
       input.form-control(type='text' name='facebook' ng-model='contact.facebook')
     .form-group
 .row
-  
   .col-xs-6
     form(name='addPhotoForm')
-      label(for='uploadPhoto') Select a Photo
-      input(type='file')
-      button(ng-click='uploadImage()') Upload Photo
-  .col-xs-6(ng-show='formState === "new"')
+      label(for='uploadPhoto'): h4 Select a Photo
+      input(type='file' onchange='angular.element(this).scope().uploadImage()')
+      br
+      br
+      button.form-control.btn.btn-danger(ng-click='uploadImage()' ng-show='contact.photo') Replace Photo
+      button.form-control.btn.btn-success(ng-click='uploadImage()' ng-hide='contact.photo') Add Photo
+  .col-xs-6
     img.img-responsive.img-rounded(ng-src='{{contact.photo}}')
-  .col-xs-6(ng-show='formState === "edit"')
-    img.img-responsive.img-rounded(ng-src='{{contact.photo}}')
+br
 .row
   .col-xs-12
-    button.form-control.btn.btn-primary(ng-click='saveContact(contact)') Save Contact
+    button.form-control.btn.btn-success(ng-click='saveContact(contact)' ng-show='formState==="new"') Add Contact
+    button.form-control.btn.btn-primary(ng-click='saveContact(contact)' ng-show='formState==="edit"') Save Contact

@@ -12,12 +12,18 @@ br
           th Name
           th Email
           th Phone
+          th Twitter
+          th Facebook
       tbody
         tr(ng-repeat='contact in contacts')
-          td(ng-click='showContact(contact)'): i.fa.fa-search.fa-3x
-          td(ng-click='deleteContact(contact)'): i.fa.fa-trash-o.fa-3x
-          td(ng-click='editContact(contact)'): i.fa.fa-pencil.fa-3x
-          td: img.img-thumbnail.listphoto(ng-src='{{contact.photo}}')
+          td(ng-click='showContact(contact)'): i.fa.fa-search.fa-2x
+          td(ng-click='deleteContact(contact)'): i.fa.fa-trash-o.fa-2x
+          td(ng-click='editContact(contact)'): i.fa.fa-pencil.fa-2x
+          td: img.img-thumbnail.listphoto(ng-src='{{contact.photo}}' ng-show='contact.photo')
           td(ng-click='showContact(contact)') {{contact.name}}
-          td {{contact.email}}
+          td: a(href='mailto:{{contact.email}}') {{contact.email}}
           td {{contact.phone}}
+          td(ng-show='contact.twitter'): a(href='http://www.twitter.com/{{contact.twitter}}'): i.fa.fa-twitter.fa-2x
+          td(ng-hide='contact.twitter') &nbsp;
+          td(ng-show='contact.facebook'): a(href='http://www.facebook.com/{{contact.facebook}}'): i.fa.fa-facebook.fa-2x
+          td(ng-hide='contact.facebook') &nbsp;
