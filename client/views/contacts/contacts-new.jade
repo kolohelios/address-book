@@ -31,11 +31,11 @@ form(name='newContactForm')
     .form-group
 .row
   .col-xs-6.col-md-4
-    form(name='addPhotoForm')
-      label(for='uploadPhoto') Pick a pic
-      input(type='file' ng-model='imageFile')
-      button.btn.btn-success(ng-click='uploadImage(imageFile)') Upload Photo
-      
+    .col-xs-12
+      form(name='addPhotoForm')
+        label(for='uploadPhoto') Select a Photo
+        input(type='file' ng-model='imageFile')
+        button.btn.btn-success(ng-click='uploadImage(imageFile)') Save Image
 .row
   .col-xs-12
-  button.form-control.btn.btn-primary(ng-click=('saveContact(contact)')) Save Contact
+  button.form-control.btn.btn-primary(ng-click='saveContact(contact)') Save Contact

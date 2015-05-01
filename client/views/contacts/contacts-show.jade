@@ -1,1 +1,9 @@
-h3 SHOW CONTACT 
+h3 CONTACT DETAIL
+h4 {{contact.name}}
+
+.row
+  .col-xs-6
+    ul
+      li: a(href='mailto:{{contact.email}}') {{contact.email}}
+      li: a(href='tel:{{contact.phone}}') {{contact.phone}}
+      

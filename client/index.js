@@ -1,1 +1,1 @@
-angular.module('addressbook', ['firebase', 'ui.router']);
+angular.module('addressbook', ['firebase', 'ui.router', 'flow']);

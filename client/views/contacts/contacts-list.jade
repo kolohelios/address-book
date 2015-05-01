@@ -12,8 +12,8 @@ h3 CONTACTS LIST
           th Phone
       tbody
         tr(ng-repeat='contact in contacts')
-          td: i.fa.fa-trash-o
+          td(ng-click='deleteContact(contact)'): i.fa.fa-trash-o
           td: img(ng-src='')
-          td {{contact.name}}
+          td(ng-click='showContact(contact)') {{contact.name}}
           td {{contact.email}}
           td {{contact.phone}}

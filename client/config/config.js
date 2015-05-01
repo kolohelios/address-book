@@ -15,5 +15,17 @@ angular.module('addressbook')
   .state('contacts', {url: '/contacts', templateUrl: '/views/contacts/contacts.html', abstract: true})
   .state('contacts.new', {url: '/new', templateUrl: '/views/contacts/contacts-new.html', controller: 'ContactsNewCtrl'})
   .state('contacts.list', {url: '/', templateUrl: '/views/contacts/contacts-list.html', controller: 'ContactsListCtrl'})
-  .state('contacts.show', {url: '/{id}', templateUrl: '/views/contacts/contacts-show.html', controller: 'ContactsShowCtrl'});
-});
+  .state('contacts.show', {url: '/{contact}', templateUrl: '/views/contacts/contacts-show.html', controller: 'ContactsShowCtrl'});
+})
+.config(['flowFactoryProvider', function (flowFactoryProvider) {
+  flowFactoryProvider.defaults = {
+    target: 'upload.php',
+    permanentErrors: [404, 500, 501],
+    maxChunkRetries: 1,
+    chunkRetryInterval: 5000,
+    simultaneousUploads: 4
+  };
+  flowFactoryProvider.on('catchAll', function (){
+    console.log('catchAll', arguments);
+  });
+}]);

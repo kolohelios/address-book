@@ -18,8 +18,8 @@ angular.module('addressbook')
     afAddressBook.$add(contact);
   };
 
-  AddressBook.deleteContact = function(){
-
+  AddressBook.deleteContact = function(contact){
+    afAddressBook.$remove(contact);
   };
 
   return AddressBook;
