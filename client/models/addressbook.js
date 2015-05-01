@@ -16,9 +16,8 @@ angular.module('addressbook')
 
   AddressBook.addContact = function(contact){
     var o = angular.copy(contact);
-    o.birthday = o.birthday.getTime();
+    o.birthday = o.birthday ? o.birthday.getTime() : '';
     afAddressBook.$add(o);
-    $state.go('contacts.list');
   };
 
   AddressBook.editContact = function(contact){

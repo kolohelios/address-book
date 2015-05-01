@@ -14,6 +14,9 @@ angular.module('addressbook')
     return afContact;
   };
 
+  Contact.save = function(){
+    afContact.$save();
+  };
 
   return Contact;
 

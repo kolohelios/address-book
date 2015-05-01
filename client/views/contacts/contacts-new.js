@@ -5,11 +5,12 @@ angular.module('addressbook')
 
   AddressBook.init();
   $scope.formState = 'new';
+  $scope.contact = {};
+  $scope.contact.photo = '';
 
   $scope.saveContact = function(contact){
-    var o = angular.copy(contact);
-    o.photo = photoString;
-    AddressBook.addContact(o);
+    
+    AddressBook.addContact(contact);
     $state.go('contacts.list');
   };
 
@@ -17,7 +18,7 @@ angular.module('addressbook')
     previewFile();
   };
 
-  var photoString;
+  //var photoString;
 
   function previewFile(){
     var preview = document.querySelector('img');
@@ -25,7 +26,7 @@ angular.module('addressbook')
     var reader  = new FileReader();
 
     reader.onloadend = function () {
-      photoString = reader.result;
+      $scope.contact.photo = reader.result;
     };
 
     if (file) {
