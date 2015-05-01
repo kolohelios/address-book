@@ -1,4 +1,4 @@
 'use strict';
 
-angular.module('poseidon')
-.constant('firebaseUrl', 'https://ENTER-YOUR-FB-URL.firebaseio.com/');
+angular.module('addressbook')
+.constant('firebaseUrl', 'https://addressbook-kolo.firebaseio.com/');

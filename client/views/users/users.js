@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('poseidon')
+angular.module('addressbook')
 .controller('UsersCtrl', function($scope, $state, $window, User){
   $scope.name = $state.current.name;
 
@@ -19,5 +19,9 @@ angular.module('poseidon')
         $window.swal({title: 'Login Error', text: 'There was a problem with your login. Please try again.', type: 'error'});
       });
     }
+  };
+
+  $scope.oauth = function(provider){
+    User.oauth(provider);
   };
 });

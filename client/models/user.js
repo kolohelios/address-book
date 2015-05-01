@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('poseidon')
+angular.module('addressbook')
 .factory('User', function($rootScope){
 
   function User(){
@@ -16,6 +16,10 @@ angular.module('poseidon')
 
   User.logout = function(){
     return $rootScope.afAuth.$unauth();
+  };
+
+  User.oauth = function(provider){
+    return $rootScope.afAuth.$authWithOAuthPopup(provider);
   };
 
   return User;
