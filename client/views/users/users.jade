@@ -1,7 +1,6 @@
-h3 {{name | uppercase}}
-
 .row
-  .col-xs-4
+  .center.col-xs-4.col-xs-offset-4
+    h3 {{name | uppercase}}
     form(name='userForm', novalidate)
       .form-group
         label(for='email') Email
@@ -10,9 +9,13 @@ h3 {{name | uppercase}}
         label(for='password') Password
         input.form-control#password(type='password', name='password', ng-model='user.password')
       .form-group
-        button.btn.btn-default(type='submit', ng-click='submit(user)') Submit
-        button.btn.btn-primary(type='submit', ng-click='oauth("facebook")') Facebook
-        button.btn.btn-primary(type='submit', ng-click='oauth("github")') Github
-        button.btn.btn-primary(type='submit', ng-click='oauth("twitter")') Twitter
-        button.btn.btn-primary(type='submit', ng-click='oauth("google")') Google
-  .col-xs-8
+        button.form-control.btn.btn-default(type='submit', ng-click='submit(user)') Submit
+br
+br
+.row
+  .col-xs-8.col-xs-offset-3
+      .form-group
+        button.btn.btn-primary(type='submit', ng-click='oauth("facebook")'): i.fa.fa-facebook &nbsp; Facebook
+        button.btn.btn-warning(type='submit', ng-click='oauth("github")'): i.fa.fa-github &nbsp; Github
+        button.btn.btn-info(type='submit', ng-click='oauth("twitter")'): i.fa.fa-twitter &nbsp; Twitter
+        button.btn.btn-danger(type='submit', ng-click='oauth("google")'): i.fa.fa-google &nbsp; Google

@@ -15,7 +15,6 @@ angular.module('addressbook')
       $rootScope.fbUser = null;
       $rootScope.afUser = null;
     }
-
     $state.go('home');
   });
 
@@ -26,7 +25,8 @@ angular.module('addressbook')
   function getDisplayName(data){
     switch(data.provider){
       case 'password':
-        return data.password.email;
+        var index = data.password.email.indexOf('@');
+        return data.password.email.substring(0, index);
       case 'twitter':
         return data.twitter.username;
       case 'github':

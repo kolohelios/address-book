@@ -1,15 +1,18 @@
-h3 CONTACT DETAIL
-h4 {{contact.name}}
-
+h3.center CONTACT DETAIL
+h4.center {{contact.name}}
+br
 .row
   .col-xs-6
+    img.img-responsive(ng-src='{{contact.photo}}')
+  .col-xs-6
     ul
-      li: a(href='mailto:{{contact.email}}') {{contact.email}}
-      li: a(href='tel:{{contact.phone}}') {{contact.phone}}
-      li: a(href='tel:{{contact.phone}}') {{contact.phone}}
-      li: a(href='tel:{{contact.phone}}') {{contact.phone}}
-      li: a(href='tel:{{contact.phone}}') {{contact.phone}}
-      li: a(href='tel:{{contact.phone}}') {{contact.phone}}
+      li(ng-show='contact.email'): a(href='mailto:{{contact.email}}') E-mail: {{contact.email}}
+      li(ng-show='contact.phone'): a(href='tel:{{contact.phone}}') Phone: {{contact.phone}}
+      li(ng-show='contact.address') Address:
+        p.addy(ng-repeat='addressLine in addressArray') {{addressLine}}
+      li(ng-show='contact.birthday') Birthday: {{contact.birthday | date: 'dd MMM yyyy'}}
+      li(ng-show='contact.twitter'): a(href='http://www.twitter.com/{{contact.twitter}}') {{contact.twitter}}
+      li(ng-show='contact.facebook'): a(href='http://www.facebook.com/{{contact.facebook}}') {{contact.facebook}}
     button.form-control.btn.btn-primary(ng-click='editContact(contact)') Edit
     button.form-control.btn.btn-danger(ng-click='deleteContact(contact)') Delete
       

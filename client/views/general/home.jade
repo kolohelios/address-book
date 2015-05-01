@@ -1,1 +1,9 @@
-h3 HOME
+br
+#titlepage
+  img(src='/assets/addressbook.png')
+  h1(ng-show='activeUser') {{displayName}}'s Address Book
+  h3(ng-hide='activeUser') Please be sure to 
+    span: a(ui-sref='register') register 
+    span and 
+    span: a(ui-sref='login') login 
+    span to create and use your address book.

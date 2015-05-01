@@ -1,5 +1,5 @@
-h3 {{formState | uppercase}} CONTACT
-
+h3.center {{formState | uppercase}} CONTACT
+br
 form(name='newContactForm')
 .row
   .col-xs-6.col-md-4
@@ -21,13 +21,13 @@ form(name='newContactForm')
       input.form-control(type='email' name='email' ng-model='contact.email')
     .form-group
       label(for='homepage') Homepage
-      input.form-control(type='url' name='homepage' ng-model='contact.homepage')
+      input.form-control(type='text' name='homepage' ng-model='contact.homepage')
     .form-group
       label(for='twitter') Twitter
       input.form-control(type='text' name='twitter' ng-model='contact.twitter')
     .form-group
-      label(for='twitter') Facebook
-      input.form-control(type='url' name='facebook' ng-model='contact.facebook')
+      label(for='facebook') Facebook
+      input.form-control(type='text' name='facebook' ng-model='contact.facebook')
     .form-group
 .row
   

@@ -1,5 +1,5 @@
-h3 ADDRESS BOOK
-
+h3.center ADDRESS BOOK
+br
 .row
   .col-xs-12
     table.table.table-striped
@@ -17,7 +17,7 @@ h3 ADDRESS BOOK
           td(ng-click='showContact(contact)'): i.fa.fa-search.fa-3x
           td(ng-click='deleteContact(contact)'): i.fa.fa-trash-o.fa-3x
           td(ng-click='editContact(contact)'): i.fa.fa-pencil.fa-3x
-          td: img.listphoto(ng-src='{{contact.photo}}')
+          td: img.img-thumbnail.listphoto(ng-src='{{contact.photo}}')
           td(ng-click='showContact(contact)') {{contact.name}}
           td {{contact.email}}
           td {{contact.phone}}

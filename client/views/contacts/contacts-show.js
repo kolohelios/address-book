@@ -5,6 +5,10 @@ angular.module('addressbook')
 
   var contact = $state.params.contact;
   $scope.contact = Contact.init(contact);
+  console.log($scope.contact.address);
+  $scope.contact.$loaded().then(function(){
+    $scope.addressArray = $scope.contact.address.split('\n');
+  });
 
   $scope.editContact = function(contact){
     $state.go('contacts.edit', {'contact': contact.$id});
